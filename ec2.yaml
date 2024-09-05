@@ -23,16 +23,16 @@
 
   vars:
     ansible_python_interpreter: /var/lib/jenkins/workspace/ansible/venv/bin/python
-    keypair: Mumbai
+    keypair: ansible
     instance_type: t2.micro
-    image_id: ami-0f5ee92e2d63afc18
+    image_id: ami-0522ab6e1ddcc7055
     wait: yes
     group: webserver
     count: 1
     region: ap-south-1
     security_group: ec2-security-group
     tag_name:
-      Name: Aj-ec2   
+      Name: Ansible
 
   tasks:
     - name: Create a security group
