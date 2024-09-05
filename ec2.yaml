@@ -14,13 +14,15 @@
         msg: "Using Python {{ ansible_python_version }}"
               
     - name: Install dependencies
-      shell: "/usr/bin/python3 -m pip install {{ item }}"
+      shell: |
+        . /var/lib/jenkins/workspace/ansible/venv/bin/activate
+        pip install {{ item }}
       loop:
        - boto3
        - botocore
 
   vars:
-    ansible_python_interpreter: /usr/bin/python3.10
+    ansible_python_interpreter: /var/lib/jenkins/workspace/ansible/venv/bin/python
     keypair: Mumbai
     instance_type: t2.micro
     image_id: ami-0f5ee92e2d63afc18
