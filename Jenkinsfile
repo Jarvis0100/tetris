@@ -11,7 +11,7 @@ pipeline {
         }
         stage('checkout'){
             steps{
-                git branch: 'main', url: 'https://github.com/Aj7Ay/ANSIBLE.git'
+                git branch: 'main', url: 'https://github.com/Jarvis0100/tetris.git'
             }
         }
         stage('TRIVY FS SCAN') {
